@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Un laboratorio de HTML para aprender, comparar y experimentar. Sin instalaciones ni conexión a Internet.">
+  <title>HTML LAB · Aprende haciendo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/content.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <aside class="sidebar" aria-label="Ruta de aprendizaje">
+    <a class="brand" href="#sesion-1"><span class="brand-symbol" aria-hidden="true">&lt;/&gt;</span><span>HTML <b>LAB</b><small>APRENDE HACIENDO</small></span></a>
+    <div class="sidebar-heading"><span>TU RUTA DE APRENDIZAJE</span><span>10</span></div>
+    <nav id="session-nav" aria-label="Sesiones"></nav>
+    <button id="open-comparisons" class="compare-link"><span aria-hidden="true">⇄</span> No confundas estas etiquetas</button>
+    <a class="compare-link" href="html-lab-avanzado/index.html" style="display:block;margin-top:10px;text-decoration:none"><span aria-hidden="true">↗</span> Ampliación · HTML y Web APIs</a>
+    <div class="sidebar-note"><span class="status-dot" aria-hidden="true"></span> Tu próximo paso empieza aquí.<small>Explora a tu ritmo. Prueba sin miedo.</small></div>
+    <div class="sidebar-footer">DAM · DAW <span>HTML5 / FP</span></div>
+  </aside>
+
+  <div class="workspace">
+    <header class="topbar">
+      <div class="tagline">Explora, comprende y experimenta con HTML</div>
+      <div class="header-actions">
+        <div class="search-wrap"><span aria-hidden="true">⌕</span><label class="sr-only" for="tag-search">Buscar etiquetas, conceptos o categorías</label><input id="tag-search" type="search" placeholder="Busca una etiqueta…" autocomplete="off"><button id="clear-search" aria-label="Limpiar búsqueda" hidden>×</button></div>
+        <button id="theme-toggle" class="icon-button" aria-label="Activar modo oscuro" title="Cambiar tema">◐</button>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="session-hero" aria-labelledby="session-title">
+        <div class="hero-copy"><div class="eyebrow" id="session-eyebrow">TU LABORATORIO DE HTML</div><h1 id="session-title">Anatomía de un documento</h1><p id="session-description"></p><div class="session-meta"><span class="pill" id="session-category"></span><span id="session-count"></span><span class="offline-label"><span aria-hidden="true">●</span> Disponible sin conexión</span></div></div>
+        <div class="progress-card"><span class="eyebrow">TU PROGRESO</span><div><strong id="progress-percent">0<span>%</span></strong><span class="progress-caption">Cada etiqueta,<br>un paso más.</span></div><progress id="total-progress" max="100" value="0" aria-label="Progreso total de aprendizaje"></progress><p id="progress-label"></p></div>
+      </section>
+
+      <details class="session-guide" id="session-guide"><summary><span aria-hidden="true">✦</span> <span id="guide-title">Antes de experimentar</span><span class="guide-hint">Abre la guía de esta sesión</span></summary><div id="guide-content"></div></details>
+
+      <section id="learning-workspace" class="learning-workspace" aria-label="Explorador de etiquetas">
+        <aside class="tag-browser" aria-label="Etiquetas disponibles"><div class="panel-heading"><h2 id="tag-list-title">Explora las etiquetas</h2><span id="tag-count"></span></div><p class="small muted" id="tag-list-help">Selecciona una para empezar.</p><div id="tag-list" class="tag-list"></div><div id="no-results" hidden><p>No encontramos esa etiqueta. Prueba «texto», «formulario» o «enlace».</p><button class="secondary" id="reset-search">Limpiar búsqueda</button></div></aside>
+
+        <article id="tag-detail" class="tag-detail" aria-labelledby="tag-title">
+          <header class="detail-heading"><div><div class="eyebrow" id="detail-category"></div><h2 id="tag-title" tabindex="-1"></h2><p id="tag-summary"></p></div><button id="mark-explored" class="explored-button" aria-pressed="false"><span aria-hidden="true">○</span> Marcar explorada</button></header>
+          <div class="explanation-grid"><section><h3>¿Qué es?</h3><p id="tag-what"></p></section><section><h3>¿Para qué sirve?</h3><p id="tag-purpose"></p></section></div>
+          <div class="when-note"><span aria-hidden="true">↳</span><div><h3>Cuándo utilizarla</h3><p id="tag-when"></p></div></div>
+          <div class="syntax-line"><span>Así se escribe</span><code id="tag-syntax"></code></div>
+
+          <section class="lab" aria-labelledby="lab-title">
+            <div class="lab-heading"><h3 id="lab-title"><span class="status-dot" aria-hidden="true"></span> Experimenta</h3><span>CAMBIA ALGO. MIRA QUÉ PASA.</span></div>
+            <div class="lab-toolbar"><div class="view-switch" role="group" aria-label="Vista del laboratorio"><button data-view="split" aria-pressed="true">Código + vista</button><button data-view="preview" aria-pressed="false">Vista previa</button><button data-view="code" aria-pressed="false">Código</button></div><div class="lab-tools"><button id="copy-code" title="Copiar ejemplo">Copiar</button><button id="reset-code" title="Restablecer ejemplo">↺ Restablecer</button><button id="isolate-example" title="Ampliar la demostración">↗ Ampliar</button></div></div>
+            <div class="lab-panes" id="lab-panes" data-view="split"><div class="code-pane" id="code-pane"><label for="code-editor"><span class="file-dot" aria-hidden="true"></span> ejemplo.html <span>EDITABLE</span></label><textarea id="code-editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="editor-help"></textarea><div class="editor-bottom"><small id="editor-help">Edita el HTML y pulsa Ejecutar.</small><button id="run-code" class="primary">Ejecutar <span aria-hidden="true">↗</span></button></div></div><div class="preview-pane" id="preview-pane"><div class="preview-label"><span>RESULTADO EN EL NAVEGADOR</span><span class="window-dots" aria-hidden="true">● ● ●</span></div><iframe id="example-preview" title="Resultado del ejemplo HTML" sandbox referrerpolicy="no-referrer"></iframe></div></div>
+            <p class="lab-notice" id="preview-notice" role="status">Un espacio para probar: los cambios se quedan en este ejemplo.</p>
+            <div class="table-control" id="table-control" hidden><label><input type="checkbox" id="table-borders" checked> Mostrar bordes de la tabla</label></div>
+            <details class="structure-panel"><summary>Estructura resaltada <span>Localiza la etiqueta en contexto</span></summary><div class="structure-toolbar"><p id="structure-description"></p><button id="highlight-toggle" class="secondary" aria-pressed="true">Quitar resaltado</button></div><div id="structure-picker" class="related-tags"></div><iframe id="structure-preview" title="Estructura del documento con la etiqueta resaltada" sandbox referrerpolicy="no-referrer"></iframe></details>
+          </section>
+
+          <div class="insights-grid"><section class="insight benefit"><h3><span aria-hidden="true">+</span> Qué aporta</h3><p id="tag-benefit"></p></section><section class="insight caution"><h3><span aria-hidden="true">!</span> Evita este error</h3><p id="tag-caution"></p></section></div>
+          <details class="accessibility-note"><summary>Accesibilidad y semántica</summary><p id="tag-accessibility"></p></details>
+          <section id="attributes-section" class="attributes-section" hidden><h3>Atributos que conviene conocer</h3><p class="small muted">Son información añadida a la etiqueta de apertura, no etiquetas.</p><dl id="tag-attributes"></dl></section>
+          <section class="related-section"><h3>Conecta las ideas</h3><div id="related-tags" class="related-tags"></div></section>
+          <footer class="detail-footer"><span id="current-position"></span><button id="next-tag" class="secondary">Siguiente etiqueta →</button></footer>
+        </article>
+      </section>
+
+      <section id="comparison-section" class="comparison-section" hidden aria-labelledby="comparison-title"><div class="section-kicker">MISMO ASPECTO ≠ MISMO SIGNIFICADO</div><h2 id="comparison-title" tabindex="-1">No confundas estas etiquetas</h2><p>HTML describe el significado. CSS puede cambiar el aspecto. Dos elementos pueden parecer iguales y expresar cosas distintas.</p><div id="comparison-presets" class="comparison-presets" aria-label="Comparaciones guiadas"></div><form id="comparison-form"><label>Primera opción<select id="compare-a"></select></label><span aria-hidden="true">⇄</span><label>Segunda opción<select id="compare-b"></select></label><button class="primary" type="submit">Comparar</button></form><p id="comparison-tip" class="comparison-tip"></p><pre id="comparison-document" class="guide-code" hidden></pre><div id="comparison-panels" class="comparison-panels"></div><button class="secondary" id="return-session">← Volver a la sesión</button></section>
+
+      <section id="native-demos" class="native-demos" hidden aria-labelledby="native-title"><div class="section-kicker">PONLO A PRUEBA</div><h2 id="native-title">Un formulario de verdad</h2><div id="form-demo-wrap" hidden><p>Usa datos inventados. El navegador comprueba los campos; no se guardan ni se envían.</p><form id="demo-form" autocomplete="off"><fieldset><legend>Tu matrícula de prueba</legend><div class="form-grid"><label>Alias inventado<input name="alias" required minlength="2" maxlength="30" placeholder="Ej.: Estudiante 7" autocomplete="off"></label><label>Correo de prueba<input type="email" name="email" required placeholder="alumna@example.com" autocomplete="off"></label><label>Contraseña ficticia<input type="password" name="password" minlength="8" required autocomplete="new-password"></label><label>Horas de práctica<input type="number" name="hours" min="1" max="10" step="1" value="2"></label><label>Fecha de inicio<input type="date" name="start"></label><label>Ciclo<select name="cycle"><optgroup label="Grado superior"><option value="dam">DAM</option><option value="daw">DAW</option></optgroup></select></label></div><div class="check-row"><label><input type="radio" name="turn" value="morning" checked> Mañana</label><label><input type="radio" name="turn" value="afternoon"> Tarde</label><label><input type="checkbox" name="practice" required> Quiero practicar (obligatorio)</label></div><div class="button-row"><button type="submit" class="primary">Validar prueba</button><button type="reset" class="secondary">Restablecer</button><button type="button" id="form-help" class="secondary">Ver ayuda</button></div><p id="form-status" role="status"></p></fieldset></form></div><div id="dialog-demo-wrap" hidden><p><code>details</code> se despliega sin JavaScript. Para abrir este diálogo modal usamos <code>showModal()</code> desde JavaScript.</p><details><summary>¿Qué puede hacer HTML por sí solo?</summary><p>Crear enlaces, campos con validación y este contenido desplegable. La lógica personalizada se añade con JavaScript.</p></details><button id="show-demo-dialog" class="primary">Abrir un diálogo</button></div></section>
+      <footer class="page-footer"><span>HTML LAB <span aria-hidden="true">/</span> Aprender es experimentar.</span><button id="show-coverage">Ver cobertura y referencias</button></footer>
+    </main>
+  </div>
+  <noscript><div class="noscript-warning">HTML LAB necesita JavaScript local para cambiar de fichas y ejecutar ejemplos. Actívalo y vuelve a abrir index.html. No requiere Internet.</div></noscript>
+  <div class="toast" id="app-status" role="status" aria-live="polite"></div>
+  <dialog id="isolated-dialog" aria-labelledby="isolated-title"><div class="dialog-heading"><h2 id="isolated-title">Tu demostración, en grande</h2><button data-close-dialog="isolated-dialog" class="secondary">Cerrar ×</button></div><iframe id="isolated-preview" title="Ejemplo ampliado y aislado" sandbox referrerpolicy="no-referrer"></iframe></dialog>
+  <dialog id="demo-dialog" aria-labelledby="demo-dialog-title"><h2 id="demo-dialog-title">Esto es un diálogo</h2><p>El foco está dentro. Puedes cerrarlo con este botón o con la tecla Escape.</p><form method="dialog"><button class="primary">Entendido, cerrar</button></form></dialog>
+  <dialog id="coverage-dialog" aria-labelledby="coverage-title"><div class="dialog-heading"><h2 id="coverage-title">Cobertura del laboratorio</h2><button data-close-dialog="coverage-dialog" class="secondary">Cerrar ×</button></div><div id="coverage-content"></div></dialog>
+</body>
+</html>
